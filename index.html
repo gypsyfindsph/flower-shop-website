@@ -1,216 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flower Shop</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #fdf5f8;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        header {
-            background-color: #FFB6C1; /* Soft pink */
-            padding: 20px;
-            text-align: center;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            margin: 5px 0 0;
-            font-size: 1.2em;
-        }
-
-        /* Container */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            text-align: center;
-        }
-
-        /* Product Grid */
-        .product-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .product {
-            background-color: white;
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-        }
-        .product:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-        }
-        .product img {
-            max-width: 100%;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-        .product:hover img {
-            transform: scale(1.05);
-        }
-        .product h3 {
-            font-size: 1.5em;
-            color: #FF1493; /* Bright pink */
-            margin: 10px 0;
-        }
-        .product p {
-            font-size: 1em;
-            color: #666;
-        }
-        .product .price {
-            font-size: 1.3em;
-            color: #FF69B4; /* Light pink */
-            margin-top: 10px;
-        }
-        .product a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #FF1493;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: background-color 0.3s ease;
-        }
-        .product a:hover {
-            background-color: #FF69B4;
-        }
-
-        /* Popup Styles */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .popup-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-            animation: fadeIn 0.5s ease;
-        }
-        .popup-content h2 {
-            color: #FF1493;
-        }
-        .popup-content p {
-            color: #333;
-        }
-        .popup-close {
-            background-color: #FF1493;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 1.1em;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-        }
-        .popup-close:hover {
-            background-color: #FF69B4;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Footer */
-        footer {
-            background-color: #FFB6C1;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
-        }
-        footer p {
-            margin: 0;
-            font-size: 0.9em;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-            header p {
-                font-size: 1em;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Header Section -->
-    <header>
-        <h1>Welcome to Gypsy Finds</h1>
-        <p>Elegant floral arrangements for all occasions</p>
-    </header>
-
-    <!-- Product Listing -->
-    <div class="container">
-        <div class="product-list">
-            <div class="product" onclick="openPopup('popup1')">
-                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/gypsobouquet.jpg" alt="Mini Dried Gypsophilia Bouquet">
+            <!-- Mini Dried Gypsophilia Bouquet -->
+            <div class="product" onclick="openPopup('popupMiniBouquet')">
+                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/miniboq1.jpg" alt="Mini Dried Gypsophilia Bouquet">
                 <h3>Mini Dried Gypsophilia Bouquet</h3>
                 <p>A beautiful dried gypsophilia bouquet, perfect for gifting.</p>
                 <p class="price">79 PHP</p>
                 <a href="#">View Product</a>
             </div>
 
-            <div class="product" onclick="openPopup('popup2')">
-                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/cards.png" alt="Wax-Sealed Card Letter">
+            <!-- Wax-Sealed Card Letter -->
+            <div class="product" onclick="openPopup('popupCard')">
+                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/card1.png" alt="Wax-Sealed Card Letter">
                 <h3>Wax-Sealed Card Letter</h3>
                 <p>Send a personal touch with a beautifully wax-sealed card.</p>
                 <p class="price">30 PHP</p>
                 <a href="#">View Product</a>
             </div>
 
-            <div class="product" onclick="openPopup('popup3')">
-                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/setbox.png" alt="Set Box with Mini Bouquet and Card Letter">
-                <h3>Set Box with Mini Bouquet and Card Letter</h3>
-                <p>A complete set with a mini bouquet and a wax-sealed card.</p>
+            <!-- Set Box -->
+            <div class="product" onclick="openPopup('popupSetBox')">
+                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/setbox1.jpg" alt="Set Box">
+                <h3>Set Box</h3>
+                <p>A perfect set of a mini bouquet and a wax-sealed card for gifting.</p>
                 <p class="price">349 PHP</p>
                 <a href="#">View Product</a>
             </div>
 
-            <div class="product" onclick="openPopup('popup4')">
-                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littlebouquet.png" alt="Little Bouquet">
+            <!-- Little Bouquet -->
+            <div class="product" onclick="openPopup('popupLittleBouquet')">
+                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littleboq1.jpg" alt="Little Bouquet">
                 <h3>Little Bouquet</h3>
                 <p>A sweet little bouquet for every occasion.</p>
                 <p class="price">59 PHP</p>
@@ -220,15 +37,69 @@
     </div>
 
     <!-- Popups -->
-    <div id="popup1" class="popup">
+    <div id="popupMiniBouquet" class="popup">
         <div class="popup-content">
             <h2>Mini Dried Gypsophilia Bouquet</h2>
-            <p>Detailed description for Mini Dried Gypsophilia Bouquet.</p>
-            <button class="popup-close" onclick="closePopup('popup1')">Close</button>
+            <div class="carousel">
+                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/miniboq1.jpg" alt="">
+                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/miniboq2.jpg" alt="">
+                <!-- Add up to miniboq9.jpg -->
+            </div>
+            <div class="carousel-controls">
+                <button onclick="prevImage('popupMiniBouquet')">Prev</button>
+                <button onclick="nextImage('popupMiniBouquet')">Next</button>
+            </div>
+            <button class="popup-close" onclick="closePopup('popupMiniBouquet')">Close</button>
         </div>
     </div>
 
-    <!-- Add similar popup structure for other products -->
+    <div id="popupCard" class="popup">
+        <div class="popup-content">
+            <h2>Wax-Sealed Card Letter</h2>
+            <div class="carousel">
+                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/card1.png" alt="">
+                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/card2.png" alt="">
+                <!-- Add up to card8.png -->
+            </div>
+            <div class="carousel-controls">
+                <button onclick="prevImage('popupCard')">Prev</button>
+                <button onclick="nextImage('popupCard')">Next</button>
+            </div>
+            <button class="popup-close" onclick="closePopup('popupCard')">Close</button>
+        </div>
+    </div>
+
+    <div id="popupSetBox" class="popup">
+        <div class="popup-content">
+            <h2>Set Box</h2>
+            <div class="carousel">
+                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/setbox1.jpg" alt="">
+                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/setbox2.jpg" alt="">
+                <!-- Add up to setbox8.jpg -->
+            </div>
+            <div class="carousel-controls">
+                <button onclick="prevImage('popupSetBox')">Prev</button>
+                <button onclick="nextImage('popupSetBox')">Next</button>
+            </div>
+            <button class="popup-close" onclick="closePopup('popupSetBox')">Close</button>
+        </div>
+    </div>
+
+    <div id="popupLittleBouquet" class="popup">
+        <div class="popup-content">
+            <h2>Little Bouquet</h2>
+            <div class="carousel">
+                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littleboq1.jpg" alt="">
+                <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littleboq2.jpg" alt="">
+                <!-- Add up to littleboq7.jpg -->
+            </div>
+            <div class="carousel-controls">
+                <button onclick="prevImage('popupLittleBouquet')">Prev</button>
+                <button onclick="nextImage('popupLittleBouquet')">Next</button>
+            </div>
+            <button class="popup-close" onclick="closePopup('popupLittleBouquet')">Close</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -236,14 +107,25 @@
     </footer>
 
     <script>
-        // Popup Functions
         function openPopup(id) {
             document.getElementById(id).style.display = "flex";
         }
+
         function closePopup(id) {
             document.getElementById(id).style.display = "none";
         }
-    </script>
 
+        function nextImage(popupId) {
+            const popup = document.getElementById(popupId);
+            const carousel = popup.querySelector('.carousel');
+            carousel.append(carousel.firstElementChild);
+        }
+
+        function prevImage(popupId) {
+            const popup = document.getElementById(popupId);
+            const carousel = popup.querySelector('.carousel');
+            carousel.prepend(carousel.lastElementChild);
+        }
+    </script>
 </body>
 </html>
