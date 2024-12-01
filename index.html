@@ -116,6 +116,8 @@
             width: 90%;
             position: relative;
             animation: fadeIn 0.5s ease;
+            overflow-y: auto; /* Enables scrolling if images overflow */
+            max-height: 80vh; /* Limits the height of the popup content */
         }
         .popup-content h2 {
             color: #FF1493;
@@ -123,6 +125,21 @@
         .popup-content p {
             color: #333;
         }
+
+        /* Image Styles inside Popup */
+        .popup-content img {
+            width: 100%;
+            max-width: 400px; /* Ensures images do not get too big */
+            max-height: 400px; /* Limits the height of images */
+            object-fit: contain; /* Ensures images are not distorted */
+            margin-bottom: 15px;
+        }
+
+        /* Optional: Allow a smaller scaling effect on hover for the images */
+        .popup-content img:hover {
+            transform: scale(1.02);
+        }
+
         .popup-close {
             background-color: #FF1493;
             color: white;
@@ -232,6 +249,7 @@
             <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/miniboq6.jpg" alt="Mini Dried Gypsophilia Bouquet 6">
             <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/miniboq7.jpg" alt="Mini Dried Gypsophilia Bouquet 7">
             <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/miniboq8.jpg" alt="Mini Dried Gypsophilia Bouquet 8">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/miniboq9.jpg" alt="Mini Dried Gypsophilia Bouquet 9">
             <button class="popup-close" onclick="closePopup('popup1')">Close</button>
         </div>
     </div>
@@ -239,12 +257,15 @@
     <div id="popup2" class="popup">
         <div class="popup-content">
             <h2>Wax-Sealed Card Letter</h2>
-            <p>Send a personal message with a wax-sealed card letter.</p>
-            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/cards1.jpg" alt="Wax-Sealed Card Letter 1">
-            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/cards2.jpg" alt="Wax-Sealed Card Letter 2">
-            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/cards3.jpg" alt="Wax-Sealed Card Letter 3">
-            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/cards4.jpg" alt="Wax-Sealed Card Letter 4">
-            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/cards5.jpg" alt="Wax-Sealed Card Letter 5">
+            <p>Detailed description for the Wax-Sealed Card Letter.</p>
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/card1.png" alt="Wax-Sealed Card Letter 1">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/card2.png" alt="Wax-Sealed Card Letter 2">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/card3.png" alt="Wax-Sealed Card Letter 3">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/card4.png" alt="Wax-Sealed Card Letter 4">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/card5.png" alt="Wax-Sealed Card Letter 5">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/card6.png" alt="Wax-Sealed Card Letter 6">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/card7.png" alt="Wax-Sealed Card Letter 7">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/card8.png" alt="Wax-Sealed Card Letter 8">
             <button class="popup-close" onclick="closePopup('popup2')">Close</button>
         </div>
     </div>
@@ -252,12 +273,15 @@
     <div id="popup3" class="popup">
         <div class="popup-content">
             <h2>Set Box with Mini Bouquet and Card Letter</h2>
-            <p>A perfect combination of a mini bouquet and a wax-sealed card letter.</p>
+            <p>Detailed description for the Set Box with Mini Bouquet and Card Letter.</p>
             <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/setbox1.jpg" alt="Set Box 1">
             <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/setbox2.jpg" alt="Set Box 2">
             <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/setbox3.jpg" alt="Set Box 3">
             <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/setbox4.jpg" alt="Set Box 4">
             <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/setbox5.jpg" alt="Set Box 5">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/setbox6.jpg" alt="Set Box 6">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/setbox7.jpg" alt="Set Box 7">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/setbox8.jpg" alt="Set Box 8">
             <button class="popup-close" onclick="closePopup('popup3')">Close</button>
         </div>
     </div>
@@ -265,41 +289,49 @@
     <div id="popup4" class="popup">
         <div class="popup-content">
             <h2>Little Bouquet</h2>
-            <p>A sweet and elegant little bouquet, perfect for any occasion.</p>
-            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littlebouquet1.jpg" alt="Little Bouquet 1">
-            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littlebouquet2.jpg" alt="Little Bouquet 2">
-            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littlebouquet3.jpg" alt="Little Bouquet 3">
-            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littlebouquet4.jpg" alt="Little Bouquet 4">
-            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littlebouquet5.jpg" alt="Little Bouquet 5">
+            <p>Detailed description for the Little Bouquet.</p>
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littleboq1.jpg" alt="Little Bouquet 1">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littleboq2.jpg" alt="Little Bouquet 2">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littleboq3.jpg" alt="Little Bouquet 3">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littleboq4.jpg" alt="Little Bouquet 4">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littleboq5.jpg" alt="Little Bouquet 5">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littleboq6.jpg" alt="Little Bouquet 6">
+            <img src="https://raw.githubusercontent.com/gypsyfindsph/flower-shop-website/main/littleboq7.jpg" alt="Little Bouquet 7">
             <button class="popup-close" onclick="closePopup('popup4')">Close</button>
         </div>
     </div>
 
-<!-- Footer Section -->
-    <footer>
-        <div class="contact-info">
-            <h3>For more information, contact us:</h3>
-            <p><strong>Phone:</strong> 09762307599 / 09762307516</p>
-            <p><strong>Email:</strong> <a href="mailto:gypsyfinds@gmail.com">gypsyfinds@gmail.com</a></p>
-            <p><strong>Social Media:</strong></p>
-            <p>
-                <a href="https://www.facebook.com/gypsyfindsph" target="_blank">Facebook</a> |
-                <a href="https://instagram.com/gypsyyyyyy_finds?igshid=YmMyMTA2M2Y=" target="_blank">Instagram</a> |
-                <a href="https://www.tiktok.com/@gypsyfindsph?lang=en" target="_blank">TikTok</a>
-            </p>
-        </div>
-        <p>&copy; 2024 Gypsy Finds - All Rights Reserved</p>
-    </footer>
+   <!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 Gypsy Finds. All rights reserved.</p>
+    <div>
+        <p>Contact Us:</p>
+        <p>Email: <a href="mailto:contact@gypsyfinds.com">contact@gypsyfinds.com</a></p>
+        <p>Follow us on:</p>
+        <a href="https://www.facebook.com/gypsyfinds" target="_blank">Facebook</a> |
+        <a href="https://www.instagram.com/gypsyfinds" target="_blank">Instagram</a> |
+        <a href="https://www.tiktok.com/@gypsyfinds" target="_blank">TikTok</a>
+    </div>
+</footer>
 
-    <!-- JavaScript to handle popup -->
-    <script>
-        function openPopup(popupId) {
-            document.getElementById(popupId).style.display = 'flex';
-        }
+<script>
+    // Function to open the popup
+    function openPopup(popupId) {
+        document.getElementById(popupId).style.display = 'flex';
+    }
 
-        function closePopup(popupId) {
-            document.getElementById(popupId).style.display = 'none';
-        }
-    </script>
-</body>
-</html>
+    // Function to close the popup
+    function closePopup(popupId) {
+        document.getElementById(popupId).style.display = 'none';
+    }
+
+    // Optional: Close the popup if the user clicks outside of the content area
+    window.onclick = function(event) {
+        var popups = document.querySelectorAll('.popup');
+        popups.forEach(function(popup) {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    }
+</script>
